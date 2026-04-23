@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pentest
+  labels:
+    training: k8s
+spec:
+  containers:
+  - name: container
+    image: cloudsecconsult/pentest:main-1.0.0-root-2026-04-01-0343
+    command: ["/bin/bash", "-c", "--", "sleep inf"]
