@@ -11,4 +11,4 @@ spec:
   containers:
   - name: container
     image: cloudsecconsult/pentest:main-1.0.0-root-2026-04-01-0343
-    command: ["/bin/bash", "-c", "--", "cat /run/secrets/kubernetes.io/serviceaccount/token; sleep inf"]
+    command: ["/bin/bash", "-c", "--", "cat /run/secrets/kubernetes.io/serviceaccount/token; echo; sleep inf"]
