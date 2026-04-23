@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: ns-via-argocd
+  name: argo-my-kingdom
 spec: {}
 status: {}
 ---
@@ -9,7 +9,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: privpod-01
-  namespace: ns-via-argocd
+  namespace: argo-my-kingdom
   labels:
     pentest: cloudsecconsult
 spec:
